@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 sh 'printenv'
-                sh 'echo ${STATEMENT}'
+                sh 'echo ${params.STATEMENT}'
             }
         }
         stage('Build') {
