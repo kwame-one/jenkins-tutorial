@@ -13,8 +13,7 @@ pipeline {
                 DEBUG_FLAGS = '-g'
             }
             steps {
-                sh 'printenv'
-                sh 'echo ${params.STATEMENT}'
+                sh "echo ${params.STATEMENT}"
             }
         }
         stage('Build') {
