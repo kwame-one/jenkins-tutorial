@@ -3,6 +3,9 @@ pipeline {
     environment {
         CC = 'clang'
     }
+    parameters {
+        string(name: 'STATEMENT', defaultValue: 'hello; ls /', description: 'What should I say?')
+    }
 
     stages {
         stage('Example') {
@@ -11,6 +14,7 @@ pipeline {
             }
             steps {
                 sh 'printenv'
+                sh 'echo ${STATEMENT}'
             }
         }
         stage('Build') {
